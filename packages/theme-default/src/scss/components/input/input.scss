@@ -1,0 +1,54 @@
+@import "../../helps/var.scss";
+@import "../../helps/mixin.scss";
+@import "../../helps/function.scss";
+@import "./mixin.scss";
+
+@include b(input) {
+  width: $--input-width;
+  font-size: $--font-size-base;
+  @include e(inner) {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: $--input-border-radius;
+    & span{
+      position: absolute;
+      top: 4vw;
+      left: 2.2vw;
+      color: $--color-info;
+    }
+    & input {
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      border: 1px solid #ebeef5;
+      padding: $--input-padding-default;
+      border-radius: $--input-border-radius;
+      &:focus {
+        outline: none;
+        border-color: $--input-focus-border;
+      }
+    }
+
+  }
+
+  @include m(prefix) {
+    $padding-select: 'padding-left';
+    @include input-padding-variant($padding-select, $--input-padding-prefix)
+  }
+  @include m(suffix) {
+    $padding-select: 'padding-right';
+    @include input-padding-variant($padding-select, $--input-padding-suffix)
+  }
+  @include m(large) {
+    @include input-size($--input-large-font-size, $--input-large-width, $--input-large-height)
+  }
+  @include e(tips) {
+    position: absolute;
+    display: block;
+    margin-top: pxTov(10px, 1vw);
+    left: pxTov(20px, 1vw);
+    font-size: $--input-large-font-size;
+    color: $--color-danger
+  }
+}
