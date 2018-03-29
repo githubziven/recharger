@@ -8,7 +8,18 @@
 
 # recharger
 
->  A component library based on the vue2
+`recharger` 是一款基于 `Vue.js 2.X` 的 UI 组件库，主要用于移动端的使用。
+
+<p align="center">
+  <a href="https://github.com/feross/standard">
+    <img src="https://cdn.rawgit.com/feross/standard/master/badge.svg" alt="Standard - JavaScript Style">
+  </a>
+</p>
+<p align="center">
+<a href="https://www.npmjs.com/package/recharger"><img src="https://img.shields.io/badge/npm-1.0.4-brightgreen.svg" alt="npm version"></a>
+  <img src="https://img.shields.io/badge/build-passing-brightgreen.svg">
+  <a href="https://www.npmjs.com/package/recharger"><img src="https://img.shields.io/badge/licence-MIT-blue.svg"></a>
+</p>
 
 ## Build Setup
 

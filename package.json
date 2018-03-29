@@ -1,12 +1,13 @@
 {
   "name": "recharger",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": " A component library based on the vue2",
   "author": "钟伟 <liandaydayux@gmail.com>",
   "main": "src/index.js",
   "keywords": [
-    "vue","webpack","ui"
+    "vue","ui","mobile","eleme"
   ],
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/githubziven/recharger.git"
