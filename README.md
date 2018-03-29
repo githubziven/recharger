@@ -1,7 +1,7 @@
 
 <p align="center">
   <a href="https://at.aotu.io/">
-    <img width="200" src="https://github.com/VV-UI/VV-UI/blob/master/examples/assets/img/favicon.ico">
+    <img width="200" src="https://github.com/githubziven/recharger/blob/master/examples/assets/favicon.ico">
   </a>
 </p>
 # recharger
