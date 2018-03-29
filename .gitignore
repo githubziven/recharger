@@ -1,3 +1,4 @@
-.gitignore
-!/mkt/dist
+/*
+.npmignore
+!/dist
 
