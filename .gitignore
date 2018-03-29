@@ -1,0 +1,6 @@
+.idea
+.vscode
+dist/*
+!dist/static
+!dist/index.html
+node_modules/
