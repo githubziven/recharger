@@ -8,7 +8,7 @@
 
 # recharger
 
-`recharger` 是一款基于 `Vue.js 2.X` 的 UI 组件库，针对移动端的使用。
+`recharger` 是一款基于 `Vue 2.X` 的 UI 组件库，针对移动端的使用。
 
 <p align="center">
   <a href="https://github.com/feross/standard">
