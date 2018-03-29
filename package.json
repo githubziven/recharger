@@ -1,12 +1,17 @@
 {
-  "name": "srecharger",
-  "version": "1.0.5",
+  "name": "recharger",
+  "version": "1.0.6",
   "description": " A component library based on the vue2",
   "author": "钟伟 <liandaydayux@gmail.com>",
   "main": "src/index.js",
   "keywords": [
     "vue","webpack","ui"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/githubziven/recharger.git"
+  },
+  "bugs": "https://github.com/githubziven/recharger/issues",
   "private": false,
   "scripts": {
     "tag": "node build/tag.js",

@@ -1,6 +1,12 @@
-# r-vue-element
 
-> A Vue.js project
+<p align="center">
+  <a href="https://at.aotu.io/">
+    <img width="200" src="https://github.com/VV-UI/VV-UI/blob/master/examples/assets/img/favicon.ico">
+  </a>
+</p>
+# recharger
+
+>  A component library based on the vue2
 
 ## Build Setup
 
