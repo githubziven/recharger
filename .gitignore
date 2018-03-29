@@ -1,8 +1,6 @@
 .idea
 .vscode
-dist/*
-!dist/static
-!dist/index.html
+dist/
 node_modules/
 .gitignore
 package-lock.json
