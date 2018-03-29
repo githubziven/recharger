@@ -1,9 +1,11 @@
 
 <p align="center">
   <a href="https://at.aotu.io/">
-    <img width="200" src="https://github.com/githubziven/recharger/blob/master/examples/assets/favicon.ico">
+    <img width="100" src="https://github.com/githubziven/recharger/blob/master/examples/assets/favicon.ico">
   </a>
 </p>
+
+
 # recharger
 
 >  A component library based on the vue2
