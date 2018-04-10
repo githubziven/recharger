@@ -46,8 +46,8 @@
   @include e(tips) {
     position: absolute;
     display: block;
-    margin-top: pxTov(10px, 1vw);
-    left: pxTov(20px, 1vw);
+    margin-top: 10px;
+    left: 20px;
     font-size: $--input-large-font-size;
     color: $--color-danger
   }

@@ -1,9 +1,5 @@
 <template>
-  <div class="r-cash-bulk"
-       role="cash-bulk"
-       :class="{'is-active':JSON.stringify(value) === JSON.stringify(bulkInfo)}"
-       @touchstart="handleTouchStart"
-       >
+  <div class="r-cash-bulk" role="cash-bulk" :class="{'is-active':JSON.stringify(value) === JSON.stringify(bulkInfo)}" @touchstart="handleTouchStart">
     <div>{{bulkInfo.duration}}</div>
     <div>{{bulkInfo.spend}}</div>
     <input type="radio" :value="bulkInfo" v-model="value" @change="handleChange">
@@ -11,52 +7,52 @@
 </template>
 
 <script>
-  import Emitter from 'utils/mixin/emitter';
+import Emitter from 'utils/mixin/emitter'
 
-  export default {
-    name: "RCashBulk",
-    mixins: [Emitter],
-    props: {
-      bulkInfo:{}
-    },
-    data() {
-      return {
-        props: {},
-        duration:'',
-        spend:'',
-        isActive: false
+export default {
+  name: 'RCashBulk',
+  mixins: [Emitter],
+  props: {
+    bulkInfo: {}
+  },
+  data () {
+    return {
+      props: {},
+      duration: '',
+      spend: '',
+      isActive: false
+    }
+  },
+  computed: {
+    value: {
+      get () {
+        // console.log(this.bulkInfo,this._cashBulkGroup.value, value)
+        return this._cashBulkGroup.value
       }
     },
-    computed: {
-      value: {
-        get() {
-          // console.log(this.bulkInfo,this._cashBulkGroup.value, value)
-          return this._cashBulkGroup.value;
+    _cashBulkGroup () {
+      let parent = this.$parent
+      while (parent) {
+        if (parent.$options.name !== 'RCashBulkGroup') {
+          parent = parent.$parent
+        } else {
+          return parent
         }
-      },
-      _cashBulkGroup() {
-        let parent = this.$parent;
-        while (parent) {
-          if (parent.$options.name !== 'RCashBulkGroup') {
-            parent = parent.$parent;
-          } else {
-            return parent;
-          }
-        }
-        return false;
-      },
-    },
-    mounted() {
-    },
-    methods: {
-      handleTouchStart(evt) {
-        this._cashBulkGroup.$emit('input', this.bulkInfo);
-      },
-      handleChange() {
-        this.$nextTick(() => {
-          this.dispatch('RCashBulkGroup', 'handleChange', this.value);
-        });
       }
+      return false
+    }
+  },
+  mounted () {
+  },
+  methods: {
+    handleTouchStart (evt) {
+      this._cashBulkGroup.$emit('input', this.bulkInfo)
+    },
+    handleChange () {
+      this.$nextTick(() => {
+        this.dispatch('RCashBulkGroup', 'handleChange', this.value)
+      })
     }
   }
+}
 </script>

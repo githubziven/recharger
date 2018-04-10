@@ -18,6 +18,8 @@ import RForm from  '../packages/form/index.js'
 import RFormItem from '../packages/form-item/index.js'
 import MessageBox from '../packages/message/index.js'
 import RButtonGroup from '../packages/button-group/index.js'
+import RTag from '../packages/tag/index.js'
+import RDialog from '../packages/dialog/index.js'
 
 import '../packages/theme-default/lib/index.css'
 // import ElCollapseTransition from '../packages/transition/collapse-transition.js'
@@ -31,6 +33,8 @@ const components = [
   RInput,
   RForm,
   RFormItem,
+  RTag,
+  RDialog
   // ElCollapseTransition
 ]
 
@@ -56,6 +60,8 @@ export default {
   RInput,
   RForm,
   RFormItem,
+  RTag,
+  RDialog,
   MessageBox
   // RMessage,
   // ElCollapseTransition

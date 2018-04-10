@@ -7,6 +7,10 @@
     display: inline-block;
 
   }
+  &>label{
+    font-size: 14px;
+    padding-right: 10px;
+  }
   @include e(error){
     display: block;
     color:red;

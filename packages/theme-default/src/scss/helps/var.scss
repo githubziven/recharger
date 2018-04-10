@@ -68,7 +68,7 @@ $--border-color-lighter: #ebeef5 !default;
 $--border-color-extra-light: #f2f6fc !default;
 $--border-color-hover: $--color-text-placeholder !default;
 $--border-base: $--border-width-base $--border-style-base $--border-color-base !default;
-$--border-radius-base: 10px !default;
+$--border-radius-base: 4px !default;
 $--border-radius-small: 2px !default;
 $--border-radius-circle: 100% !default;
 
@@ -163,10 +163,10 @@ $--checkbox-button-checked-border-color: $--color-primary !default;
 
 /*Lead
 -------------------------- */
-$--lead-direct-width:6px!default;
-$--lead-direct-height:32px!default;
+$--lead-direct-width:3px!default;
+$--lead-direct-height:16px!default;
 $--lead-direct-fill:$--color-primary!default;
-$--lead-title-font-size:32px !default;
+$--lead-title-font-size:16px !default;
 $--lead-title-font-color:$--color-black!default;
 
 /* Radio
@@ -270,7 +270,7 @@ $--alert-icon-large-size: 28px !default;
 /* Message Box
 -------------------------- */
 $--msgbox-width: 420px !default;
-$--msgbox-border-radius: 4px !default;
+$--msgbox-border-radius: 10px !default;
 $--msgbox-font-size: $--font-size-large !default;
 $--msgbox-content-font-size: $--font-size-base !default;
 $--msgbox-content-color: $--color-text-regular !default;
@@ -327,9 +327,9 @@ $--input-font-size: $--font-size-base !default;
 $--input-color: $--color-text-regular !default;
 $--input-width: 200px !default;
 $--input-height: 40px !default;
-$--input-padding-default: pxTov(10px,1vw) pxTov(30px,1vw);
-$--input-padding-prefix:pxTov(60px,1vw);
-$--input-padding-suffix:pxTov(60px,1vw);
+$--input-padding-default: 10px 30px;
+$--input-padding-prefix:60px;
+$--input-padding-suffix:60px;
 $--input-border: $--border-base !default;
 $--input-border-color: $--border-color-base !default;
 $--input-border-radius: $--border-radius-base !default;
@@ -352,9 +352,9 @@ $--input-disabled-border: $--disabled-border-base !default;
 $--input-disabled-color: $--disabled-color-base !default;
 $--input-disabled-placeholder-color: $--color-text-placeholder !default;
 
-$--input-large-font-size:28px !default;
-$--input-large-height:96px !default;
-$--input-large-width:636px !default;
+$--input-large-font-size:16px !default;
+$--input-large-height:48px !default;
+$--input-large-width:313px !default;
 
 //$--input-medium-font-size: 14px !default;
 //$--input-medium-height: 36px !default;
@@ -410,15 +410,15 @@ $--tab-vertical-header-count-fill: $--color-text-secondary !default;
 
 /* Button
 -------------------------- */
-$--button-font-size: 28px !default;
+$--button-font-size: 14px !default;
 $--button-font-weight: $--font-weight-primary !default;
 $--button-border-radius: $--border-radius-base !default;
-$--button-padding-vertical: 12px !default;
-$--button-padding-horizontal: 20px !default;
+$--button-padding-vertical: 6px !default;
+$--button-padding-horizontal: 10px !default;
 
-$--button-fix-font-size: 32px !default;
-$--button-fix-width:633px !default;
-$--button-fix-height:96px !default;
+$--button-fix-font-size: 16px !default;
+$--button-fix-width:311px !default;
+$--button-fix-height:48px !default;
 //$--button-fix-border-radius: #{$--border-radius-base + 1} !default;
 //$--button-fix-padding-vertical: 10px !default;
 //$--button-fix-padding-horizontal: 20px !default;
@@ -475,13 +475,13 @@ $--button-active-shade-percent: 10% !default;
 
 /* cash-bulk
  --------------------------*/
-$--cash-bulk-width: pxTov(198px,1vw) !default;
-$--cash-bulk-height: pxTov(140px,1vw) !default;
-$--cash-bulk-padding: pxTov(30px,1vw) !default;
+$--cash-bulk-width: 98px !default;
+$--cash-bulk-height: 68px !default;
+$--cash-bulk-padding: 7.5px !default;
 $--cash-bulk-border:$--color-info !default;
 $--cash-bulk-fill:$--color-info-lighter !default;
 $--cash-bulk-color:$--color-info !default;
-$--cash-bulk-border-radius: pxTov(14px,1vw) !default;
+$--cash-bulk-border-radius: 5px !default;
 $--cash-bulk-active-shade-percent: 10% !default;
 
 /* cascader
@@ -560,10 +560,11 @@ $--tooltip-padding: 10px !default;
 -------------------------- */
 $--tag-padding: 0 10px !default;
 $--tag-fill: rgba($--color-primary, 0.10) !default;
-$--tag-color: $--color-primary !default;
+$--tag-color: $--color-white !default;
 $--tag-border: rgba($--color-primary, 0.20) !default;
-$--tag-font-size: 12px !default;
+$--tag-font-size: 14px !default;
 $--tag-border-radius: 4px !default;
+$--tag-line-height:30px;
 
 $--tag-info-fill: rgba($--color-info, 0.10) !default;
 $--tag-info-border: rgba($--color-info, 0.20) !default;

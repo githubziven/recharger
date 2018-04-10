@@ -16,25 +16,31 @@
   }
   @include e(body) {
     position: absolute;
-    width: 50%;
-    height: 200px;
+    width: 190px;
+    height: 108px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: gray;
-    opacity: 0.6;
+    background-color: $--color-black;
+    opacity: 0.5;
     border-radius: $--msgbox-border-radius;
     z-index: 2015;
     text-align: center;
-    padding: 30px 30px;
+    padding: 22px 15px;
+    box-sizing: border-box;
+    &>div{
+      font-size: 14px;
+    }
   }
   @include e(icon) {
     color: #fff;
-    font-size: 28px;
+    padding-bottom: 15px;
+    .iconfont {
+      font-size: 30px;
+    };
     & > .icon-jiazai {
       display: block;
       position: relative;
-      font-size: 40px;
       -webkit-animation-name: loading;
       -webkit-animation-duration: 1.5s;
       -webkit-animation-iteration-count: infinite;
@@ -46,6 +52,7 @@
     }
   }
  @include e(content){
+   color: #fff;
    -webkit-animation: twinkling 1s  ease-in-out
  }
   @-webkit-keyframes twinkling{

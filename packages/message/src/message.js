@@ -19,10 +19,10 @@ let initInstance = (options) => {
   Vue.nextTick(() => {
     instance.showBox = true;
     instance.options = merge(instance.options, options)
-    console.log('》》》》》》', instance.options)
   });
 }
 const MessageBox = (options, callback) => {
+  console.log(options)
   if (options.callback || !callback) {
     callback = options.callback
   }

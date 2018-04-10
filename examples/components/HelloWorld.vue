@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-   <r-input></r-input>
+   12345678
   </div>
 </template>
 

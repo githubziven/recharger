@@ -1,6 +1,6 @@
 {
   "name": "recharger",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "description": " A component library based on the vue2",
   "author": "钟伟 <liandaydayux@gmail.com>",
   "main": "src/index.js",
@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
+    "cssnano": "^3.10.0",
     "element": "^0.1.4",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^5.0.0",
@@ -41,12 +42,14 @@
     "markdown-it-container": "^2.0.0",
     "node-sass": "^4.8.3",
     "postcss": "^6.0.21",
+    "postcss-color-rgba-fallback": "^3.0.0",
     "postcss-px-to-viewport": "0.0.3",
     "postcss-write-svg": "^3.0.1",
     "recharger": "^1.0.5",
     "sass-loader": "^6.0.7",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
+    "vue-touch": "^1.1.0",
     "vv-ui": "0.0.4"
   },
   "devDependencies": {
@@ -80,8 +83,10 @@
     "eslint-plugin-standard": "^3.0.1",
     "eslint-plugin-vue": "^4.0.0",
     "extract-text-webpack-plugin": "^3.0.2",
+    "fast-vue-md-loader": "^1.0.3",
     "file-loader": "^1.1.4",
     "friendly-errors-webpack-plugin": "^1.6.1",
+    "gulp-plumber": "^1.2.0",
     "gulp-replace": "^0.6.1",
     "gulp-rev-collector": "^1.2.4",
     "html-webpack-plugin": "^2.30.1",
