@@ -1,6 +1,7 @@
 section {
   color: #3f536e;
   font-size: 14px;
+  text-align: left;
   .demo-block{
     padding: 32px;
     border: 1px solid #e2ecf4;
@@ -25,6 +26,9 @@ section {
   h1,h2,h3,h4,h5{
     margin: 16px 0;
     line-height: 1.5;
+  }
+  h3 {
+    font-size: 14px;
   }
   h2 {
     font-size: 18px;
@@ -51,12 +55,26 @@ section {
     }
   }
   code {
+    font-family: Source Code Pro,Monaco,Inconsolata,monospace;
     padding: .3em .5em;
     font-size: .9em;
     vertical-align: middle;
     border: 1px solid #ECECEC;
     border-radius: 2px;
     background-color: #F7F7F7;
+    font-weight: 1000;
+    .hljs-name{
+      color:#008B8B
+    }
+    .hljs-attr{
+      color:	#0000CD
+    }
+    .hljs-keyword{
+      color:#FF34B3
+    }
+    .hljs-string{
+      color:#EE7600
+    }
   }
   code.code_inline {
     padding: 0 .5em;
@@ -70,8 +88,8 @@ section {
   a {
     color: #6190e8;
   }
-  table.table {
-    display: block;
+  table {
+    // display: block;
     width: 100%;
     background-color: #fff;
     color: #5e6d82;

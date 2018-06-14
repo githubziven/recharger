@@ -16,14 +16,12 @@ const router = new VueRouter({
 })
 Vue.config.productionTip = false
 router.beforeEach((to, from,next) => {
-  // console.log(to, from)
   next()
 })
 router.afterEach((to, from) => {
   Vue.nextTick(() => window.syncPath())
 })
 window.vueRouter = router
-// console.log('======', routers())
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

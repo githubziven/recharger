@@ -8,15 +8,14 @@
 export default {
   name: 're-doc-nav-link',
   props: ['base', 'item'],
-created(){
-  console.log('PPPPP',this.base,this.item)
-},
+  created () {
+    // console.log('PPPPP', this.base, this.item)
+  },
   computed: {
-    itemName() {
-      const name = (this.item.title || this.item.name).split(' - ');
-      // console.log('-=-=-=-=',`${name[0]} <span>${name.slice(1).join(' - ')}</span>`)
-      return `${name[0]} <span>${name.slice(1).join(' - ')}</span>`;
+    itemName () {
+      const name = (this.item.title || this.item.name).split(' - ')
+      return `${name[0]} <span>${name.slice(1).join(' - ')}</span>`
     }
   }
-};
+}
 </script>

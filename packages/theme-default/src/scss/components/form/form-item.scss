@@ -2,11 +2,9 @@
 @import "../../helps/mixin.scss";
 
 @include b(form-item) {
-  margin:30px 10px;
-  &>*{
-    display: inline-block;
-
-  }
+  padding:5px 0px;
+  display: flex;
+  align-items: center;
   &>label{
     font-size: 14px;
     padding-right: 10px;

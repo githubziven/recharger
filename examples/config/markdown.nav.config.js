@@ -23,6 +23,11 @@ module.exports = {
           {
             list: [
               {
+                path: '/index',
+                title: '首页',
+                noExample: true
+              },
+              {
                 path: '/intro',
                 title: '介绍',
                 noExample: true
@@ -59,11 +64,33 @@ module.exports = {
             ]
           },
           {
-            groupName: '表单',
+            groupName: '输入与选择',
             list: [
               {
                 path: '/checkbox',
                 title: 'Checkbox - 复选框'
+              },
+              {
+                path: '/inputs',
+                title: 'Input - 输入框'
+              }
+            ]
+          },
+          {
+            groupName: '通知与交互',
+            list: [
+              {
+                path: '/dialog',
+                title: 'Dialog - 对话框'
+              }
+            ]
+          },
+          {
+            groupName: '业务组件',
+            list: [
+              {
+                path: '/购物选择框',
+                title: 'Buy - 购物选择框'
               }
             ]
           }

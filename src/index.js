@@ -1,28 +1,31 @@
-/* eslint-disable semi,comma-dangle,import/extensions,quotes,import/newline-after-import,no-multi-spaces,no-unused-vars,no-param-reassign,indent,curly */
-/**
-* date: 2018/2/12
-* author: ziven
-* comments:
-*/
-// eslint-disable-next-line semi
-// eslint-disable-next-line import/extensions
+/*
+ * @Author: zhongw@corp.21cn.com
+ * @Date: 2018-06-12 15:38:26
+ * @Last Modified by: zhongw@corp.21cn.com
+ * @Last Modified time: 2018-06-12 18:05:33
+ */
+
 import RButton from '../packages/button/index.js'
-// eslint-disable-next-line quotes
-import RLead from "../packages/lead/index.js"
-// eslint-disable-next-line quotes
-import RCashBulk from "../packages/cash-bulk/index.js"
+import RLead from '../packages/lead/index.js'
+import RCashBulk from '../packages/cash-bulk/index.js'
 import RCashBulkGroup from '../packages/cash-bulk-group/index.js'
 import RTable from '../packages/table/index.js'
 import RInput from '../packages/input/index.js'
-import RForm from  '../packages/form/index.js'
+import RForm from '../packages/form/index.js'
 import RFormItem from '../packages/form-item/index.js'
 import MessageBox from '../packages/message/index.js'
 import RButtonGroup from '../packages/button-group/index.js'
 import RTag from '../packages/tag/index.js'
 import RDialog from '../packages/dialog/index.js'
+import RAutoComplete from '../packages/auto-complete/index.js'
+import RIcon from '../packages/icon/index.js'
+import RTabs from '../packages/tabs/index.js'
+import RTabPane from '../packages/tab-pane/index.js'
+import RRadio from '../packages/radio/index.js'
+import RCheckbox from '../packages/checkbox/index.js'
+import RCheckboxButton from '../packages/checkbox-button/index.js'
+import RCheckboxGroup from '../packages/checkbox-group/index.js'
 
-import '../packages/theme-default/lib/index.css'
-// import ElCollapseTransition from '../packages/transition/collapse-transition.js'
 const components = [
   RButton,
   RButtonGroup,
@@ -34,23 +37,33 @@ const components = [
   RForm,
   RFormItem,
   RTag,
-  RDialog
-  // ElCollapseTransition
+  RDialog,
+  RAutoComplete,
+  RIcon,
+  RTabs,
+  RTabPane,
+  RCheckbox,
+  RCheckboxButton,
+  RCheckboxGroup,
+  RRadio
+  // RCollapseTransition
 ]
 
-const install = function (Vue) {
+const install = function (Vue, opts = {}) {
   // if (install.installed)
-  components.map(component => Vue.component(component.name, component))
+  components.map(component => {
+    Vue.component(component.name, component)
+  })
   Vue.prototype.$alert = MessageBox.alert
   Vue.prototype.$loading = MessageBox.loading
-  Vue.prototype.aaaa = 1
 }
 
+/* istanbul ignore if */
 if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue)
 }
 
-export default {
+export {
   install,
   RButton,
   RLead,
@@ -62,7 +75,16 @@ export default {
   RFormItem,
   RTag,
   RDialog,
+  RIcon,
+  RTabs,
+  RTabPane,
+  RRadio,
+  RCheckbox,
+  RCheckboxButton,
+  RCheckboxGroup,
   MessageBox
-  // RMessage,
-  // ElCollapseTransition
+}
+
+export default {
+  install
 }

@@ -18,11 +18,12 @@ function asyncWrapper(component) {
 function componentWrapper(component, name) {
   component = component.default;
   component.name = name;
-  console.log('??????',name,component)
   return component;
 }
 
 export default {
   'helloword': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./pages/HelloWorld.vue'), 'helloword')), 'helloword')),
-  'test': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./pages/test.vue'), 'test')), 'test'))
+  'test': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./pages/test.vue'), 'test')), 'test')),
+  'demoIndex':asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./pages/index.vue'), 'demoIndex')), 'demoIndex')),
+  'inputs':asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./pages/inputs.vue'), 'inputs')), 'inputs'))
 };

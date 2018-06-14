@@ -32,6 +32,9 @@ $--color-danger: #f56c6c !default;
 $--color-info: #909399 !default;
 $--color-plain: #fff !default;
 
+$--color-error:#FF3B30 !default;
+$--color-temp:#E2D200  !default;
+
 $--color-success-light: mix($--color-white, $--color-success, 80%) !default;
 $--color-warning-light: mix($--color-white, $--color-warning, 80%) !default;
 $--color-danger-light: mix($--color-white, $--color-danger, 80%) !default;
@@ -327,9 +330,9 @@ $--input-font-size: $--font-size-base !default;
 $--input-color: $--color-text-regular !default;
 $--input-width: 200px !default;
 $--input-height: 40px !default;
-$--input-padding-default: 10px 30px;
-$--input-padding-prefix:60px;
-$--input-padding-suffix:60px;
+$--input-padding-default: 7px 6px 7px 6px;
+$--input-padding-prefix:20px;
+$--input-padding-suffix:20px;
 $--input-border: $--border-base !default;
 $--input-border-color: $--border-color-base !default;
 $--input-border-radius: $--border-radius-base !default;
@@ -417,8 +420,8 @@ $--button-padding-vertical: 6px !default;
 $--button-padding-horizontal: 10px !default;
 
 $--button-fix-font-size: 16px !default;
-$--button-fix-width:311px !default;
-$--button-fix-height:48px !default;
+$--button-fix-width:335px !default;
+$--button-fix-height:46px !default;
 //$--button-fix-border-radius: #{$--border-radius-base + 1} !default;
 //$--button-fix-padding-vertical: 10px !default;
 //$--button-fix-padding-horizontal: 20px !default;
@@ -477,12 +480,17 @@ $--button-active-shade-percent: 10% !default;
  --------------------------*/
 $--cash-bulk-width: 98px !default;
 $--cash-bulk-height: 68px !default;
-$--cash-bulk-padding: 7.5px !default;
-$--cash-bulk-border:$--color-info !default;
+$--cash-bulk-padding: 15px 20px 10px 20px !default;
+$--cash-bulk-border:$--color-primary !default;
 $--cash-bulk-fill:$--color-info-lighter !default;
 $--cash-bulk-color:$--color-info !default;
 $--cash-bulk-border-radius: 5px !default;
-$--cash-bulk-active-shade-percent: 10% !default;
+$--cash-bulk-active-shade-percent: 70% !default;
+$--cash-bulk-year-font-size:18px!default;
+$--cash-bulk-year-color:#151515!default;
+$--cash-bulk-rmb-font-size:12px!default;
+$--cash-bulk-rmb-color: #666666!default;
+
 
 /* cascader
 -------------------------- */
@@ -586,6 +594,13 @@ $--tag-danger-fill: rgba($--color-danger, 0.10) !default;
 $--tag-danger-border: rgba($--color-danger, 0.20) !default;
 $--tag-danger-color: $--color-danger !default;
 
+$--tag-error-fill: rgba($--color-error, 0.10) !default;
+$--tag-error-border: rgba($--color-error, 0.20) !default;
+$--tag-error-color: $--color-error !default;
+
+$--tag-temp-fill: rgba($--color-temp, 0.10) !default;
+$--tag-temp-border: rgba($--color-temp, 0.20) !default;
+$--tag-temp-color: $--color-temp !default;
 /* Tree
 -------------------------- */
 $--tree-node-hover-color: $--background-color-base !default;

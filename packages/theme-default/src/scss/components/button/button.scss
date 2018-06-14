@@ -18,6 +18,37 @@
   border-radius: $--border-radius-base;
   padding: 12px 20px;
   font-size: $--button-font-size;
+  transition: all .28s cubic-bezier(.71,-.46,.29,1.46);
+  .iconfont{
+    font-size:$--button-font-size;
+    margin:0 5px;
+  }
+
+  @include when(disabled) {
+    &,
+    &:hover,
+    &:focus {
+      color: $--button-disabled-color;
+      cursor: not-allowed;
+      background-image: none;
+      background-color: $--button-disabled-fill;
+      border-color: $--button-disabled-border;
+    }
+
+    &.el-button--text {
+      background-color: transparent;
+    }
+
+    &.is-plain {
+      &,
+      &:hover,
+      &:focus {
+        background-color: $--color-white;
+        border-color: $--button-disabled-border;
+        color: $--button-disabled-color;
+      }
+    }
+  }
   @include m(primary) {
     @include button-variant($--button-primary-color, $--button-primary-fill, $--button-primary-border);
   }

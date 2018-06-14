@@ -9,12 +9,20 @@ import docConfig from '../config/markdown.nav.config'
 Vue.use(Router)
 
 const registerRoute = (isExample) => {
-// Object.keys(navConfig).forEach((lang, index) => {
-//   return
-// }
   const routers = []
   Object.keys(docConfig).forEach((lang, index) => {
-
+    // if (isExample) {
+    //   routers.push({
+    //     path: `/${lang}`,
+    //     component: componentDemos['demoIndex'],
+    //     meta: { lang }
+    //   })
+    // } else {
+    //   routers.push({
+    //     path: `/${lang}`,
+    //     redirect: `/${lang}/intro`
+    //   })
+    // }
     const navs = docConfig[lang].nav || []
     navs.forEach(nav => {
       if (nav.groups) {
@@ -26,24 +34,19 @@ const registerRoute = (isExample) => {
       }
     })
     function addRoute (page, lang) {
-      // console.log('page',page)
-      if (isExample && page.noExample) {
-        return
-      }
-
       const { path } = page
       if (path) {
         const name = lang + '/' + path.replace('/', '')
         let component
-
-        if (path === '/demo') {
-          //component = DemoPages
-          component = componentDocs[name]
-        } else {
-          console.log('00000', path, isExample)
-          component = isExample ? componentDemos[path.replace('/', '')] : componentDocs[name]
-
+        // 如果是isExample添加demo的路由，否则doc的路由
+        if (isExample) {
+          // 如果该页面没有模拟demo则统一跳到demo首页
+          component = page.noExample ? componentDemos['demoIndex'] : component = componentDemos[path.replace('/', '')]
+        }else{
+          // console.log('page',page)
+          component=componentDocs[name]
         }
+
         routers.push({
           name,
           component: component,

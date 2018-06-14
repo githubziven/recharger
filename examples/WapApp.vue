@@ -1,11 +1,11 @@
 <template>
   <div style="width: 100%;height: 100%">
     <!--<van-nav-bar-->
-      <!--v-show="title"-->
-      <!--class="van-doc-nav-bar"-->
-      <!--:title="title"-->
-      <!--left-arrow-->
-      <!--@click-left="onBack"-->
+    <!--v-show="title"-->
+    <!--class="van-doc-nav-bar"-->
+    <!--:title="title"-->
+    <!--left-arrow-->
+    <!--@click-left="onBack"-->
     <!--/>-->
     <keep-alive>
       <router-view />
@@ -16,26 +16,27 @@
 <script>
 export default {
   computed: {
-    title() {
-      const { name } = this.$route.meta;
-      return name ? name.replace(/-/g, '') : '';
+    title () {
+      const { name } = this.$route.meta
+      return name ? name.replace(/-/g, '') : ''
     }
   },
 
   methods: {
-    onBack() {
-      history.back();
+    onBack () {
+      history.back()
     }
   }
-};
+}
 </script>
 
 <style lang="postcss">
 body {
   color: #333;
   line-height: 1;
-  background-color: #f8f8f8;
-  font-family: Arial, Helvetica, "STHeiti STXihei", "Microsoft YaHei", Tohoma, sans-serif;
+  background-color: transparent;
+  font-family: Arial, Helvetica, "STHeiti STXihei", "Microsoft YaHei", Tohoma,
+    sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 

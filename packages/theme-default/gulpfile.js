@@ -13,14 +13,15 @@ var pxtoviewport = require('postcss-px-to-viewport'); // 代码中写px编译后
 
 var concat = require('gulp-concat-dir');//- 多个文件合并为一个；
 var replace = require('gulp-replace');
-var del = require('del');
+var clean = require('gulp-clean');
+
 var processors = [
   pxtoviewport({
     viewportWidth: 375, //注意：按照100vw=375px 转化
     viewportHeight: 1334,
     unitPrecision: 5,
     viewportUnit: 'vw',
-    selectorBlackList: ['iconfont'],
+    selectorBlackList: [],
     minPixelValue: 1,
     mediaQuery: false
   })
@@ -35,7 +36,7 @@ gulp.task('sass', function () {
     .pipe(concat({ext: '.css'}))
     .pipe(replace('assets/', ''))
     .pipe(cssmin())
-    .pipe(gulp.dest('./lib/'))
+    .pipe(gulp.dest('../../theme/'))
 });
 
 gulp.task('img', function () {
@@ -47,18 +48,17 @@ gulp.task('img', function () {
       interlced: true, //Boolean类型 默认false 隔行扫描gif进行渲染
       multipass: true //Boolean类型 默认false 多次优化svg直到完全优化
     }))
-    .pipe(gulp.dest('./lib/img')) //输入到build文件夹下的images文件夹下
+    .pipe(gulp.dest('../../theme/img')) //输入到build文件夹下的images文件夹下
 })
 gulp.task('clean:lib', function (cb) {
-  del([
-    'lib/*'
-  ], cb);
+  return gulp.src('../../theme/*', {read: false})
+  .pipe(clean({force: true}))
 });
 gulp.task('iconfont', function () {
   return gulp.src('./src/assets/iconfont/**')
     .pipe(plumber())
     .pipe(cssmin())
-    .pipe(gulp.dest('./lib/iconfont'));
+    .pipe(gulp.dest('../../theme/iconfont'));
 });
 
 gulp.task('sass:watch', function () {
@@ -66,3 +66,5 @@ gulp.task('sass:watch', function () {
 });
 
 gulp.task('default', ['clean:lib', 'sass', 'img', 'iconfont', 'sass:watch']);
+
+gulp.task('build', ['clean:lib', 'sass', 'img', 'iconfont']);

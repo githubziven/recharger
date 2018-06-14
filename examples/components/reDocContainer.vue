@@ -15,9 +15,9 @@ export default {
 .re-doc-container {
   position: absolute;
   width: 100%;
-  background-color: #32a973;
-  top: $re-doc-header-top-height;
+  top:60px;
   left: 0;
   bottom: 0;
+  overflow: hidden;
 }
 </style>

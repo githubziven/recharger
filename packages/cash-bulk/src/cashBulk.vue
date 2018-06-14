@@ -1,13 +1,13 @@
 <template>
-  <div class="r-cash-bulk" role="cash-bulk" :class="{'is-active':JSON.stringify(value) === JSON.stringify(bulkInfo)}" @touchstart="handleTouchStart">
-    <div>{{bulkInfo.duration}}</div>
-    <div>{{bulkInfo.spend}}</div>
+  <div class="r-cash-bulk" role="cash-bulk" :class="{'is-active':JSON.stringify(value) === JSON.stringify(bulkInfo)}" @click="handleTouchStart">
+    <div class="r-cash-bulk-year">{{bulkInfo.duration}}</div>
+    <div class="r-cash-bulk-rmb">{{bulkInfo.spend}}</div>
     <input type="radio" :value="bulkInfo" v-model="value" @change="handleChange">
   </div>
 </template>
 
 <script>
-import Emitter from 'utils/mixin/emitter'
+import Emitter from 'recharger/src/utils/mixin/emitter'
 
 export default {
   name: 'RCashBulk',

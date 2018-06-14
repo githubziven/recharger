@@ -1,7 +1,7 @@
 'use strict'
 const utils = require('./utils')
 const config = require('../config')
-const selectorBlackList= require('../config/pxToviewport')
+const selectorBlackList= require('../config/pxToviewport').default
 const isProduction = process.env.NODE_ENV === 'production'
 const sourceMapEnabled = isProduction
   ? config.build.productionSourceMap
@@ -34,18 +34,7 @@ module.exports = {
     // 处理flex浏览器兼容性
     // require('postcss-flexibility'),
     // 处理css中rgba颜色代码
-    require('postcss-color-rgba-fallback'),
-    // 处理css中opacity的IE兼容性。
-    // require('postcss-opacity'),
-    require("postcss-px-to-viewport")({
-      viewportWidth: 750,
-      viewportHeight: 1334,
-      unitPrecision: 5,
-      viewportUnit: 'vw',
-      selectorBlackList: selectorBlackList,
-      minPixelValue: 1,
-      mediaQuery: false
-    })
+    require('postcss-color-rgba-fallback')
 
   ]
 }

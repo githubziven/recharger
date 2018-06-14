@@ -22,8 +22,10 @@
         height: 180px;
         background-color: $--color-white;
         border-radius: 6px;
-        span {
+        .r-dialog__close {
             font-size: 25px;
+            // width: 10px;
+            // height: 10px;
             float: right;
             color: rgba($color: $--color-black, $alpha: 0.4)
         }

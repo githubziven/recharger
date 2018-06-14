@@ -6,6 +6,7 @@ class Transition {
 // eslint-disable-next-line class-methods-use-this
   beforeEnter(el) {
     addClass(el, 'collapse-transition')
+    // console.log('000000000000')
     if (!el.dataset) el.dataset = {}
 
     el.dataset.oldPaddingTop = el.style.paddingTop
@@ -70,7 +71,10 @@ class Transition {
 }
 
 export default {
-  name: 'MyCollapseTransition',
+  props: {
+    name: 'collapse-transition',
+    mode: 'out-in'
+  },
   functional: true,
   render(h, test) {
     const data = {

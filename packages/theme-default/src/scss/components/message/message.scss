@@ -29,16 +29,16 @@
     padding: 22px 15px;
     box-sizing: border-box;
     &>div{
-      font-size: 14px;
+      font-size: 14px!important;
     }
   }
   @include e(icon) {
     color: #fff;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
     .iconfont {
-      font-size: 30px;
+      font-size: 28px!important;
     };
-    & > .icon-jiazai {
+    & > .r-icon-jiazai {
       display: block;
       position: relative;
       -webkit-animation-name: loading;
@@ -53,7 +53,7 @@
   }
  @include e(content){
    color: #fff;
-   -webkit-animation: twinkling 1s  ease-in-out
+  //  -webkit-animation: twinkling 1s  ease-in-out
  }
   @-webkit-keyframes twinkling{
     0%{

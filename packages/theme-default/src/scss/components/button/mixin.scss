@@ -39,12 +39,18 @@
 
 @mixin button-size($padding-vertical, $padding-horizontal, $font-size, $border-radius) {
   padding: $padding-vertical $padding-horizontal;
-  font-size: $font-size;
+  font-size: $font-size+!important;
   border-radius: $border-radius;
+  .iconfont{
+    font-size:$font-size+!important;
+  }
 }
 @mixin button-fix($font-size,$width,$height){
-  font-size: $font-size;
+  font-size: $font-size+!important;
   width: $width;
   height: $height;
+  .iconfont{
+    font-size:$font-size+!important;
+  }
 }
 

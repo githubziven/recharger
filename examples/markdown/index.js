@@ -4,8 +4,10 @@
 
 // import progress from 'nprogress';
 import test from './zh-CN/test.md'
-function wrapper(component) {
-  return function(r) {
+// import index from './zh-CN/index.vue'
+// import inputs from './zh-CN/inputs.md'
+function wrapper (component) {
+  return function (r) {
     // progress.start();
     component(r).then(() => {
       // progress.done();
@@ -14,14 +16,9 @@ function wrapper(component) {
     });
   };
 }
-
-// function componentWrapper(component, name) {
-//   component = component.default;
-//   component.name = name;
-//
-//   return component;
-// }
-
 export default {
-  'zh-CN/test': resolve => require.ensure([], () => resolve(require('./zh-CN/test.md')), 'test')
+  'zh-CN/test': wrapper(r => require.ensure([], () => r(require('./zh-CN/test.md')), 'zh-CN/test')),
+  'zh-CN/index': wrapper(r => require.ensure([], () => r(require('./zh-CN/index.vue')), 'zh-CN/index')),
+  'zh-CN/inputs':wrapper(r => require.ensure([], () => r(require('./zh-CN/inputs.md')), 'zh-CN/inputs')),
+  'zh-CN/quickstart':wrapper(r => require.ensure([], () => r(require('./zh-CN/quickstart.md')), 'zh-CN/quickstart'))
 };

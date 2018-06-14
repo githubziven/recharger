@@ -1,8 +1,16 @@
+/*
+ * @Author: zhongw@corp.21cn.com 
+ * @Date: 2018-06-14 10:00:23 
+ * @Last Modified by:   zhongw@corp.21cn.com 
+ * @Last Modified time: 2018-06-14 10:00:23 
+ */
 'use strict'
 const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const vueLoaderConfig = require('./vue-loader.conf')
+
 // const striptags = require('./strip-tag')
 // const MarkdownItContainer = require('markdown-it-container')
 
@@ -74,6 +82,7 @@ module.exports = {
   entry: {
     docs: './examples/main.js',
     mobile: './examples/mobile.js'
+    // app:'./packages/theme-default/index.scss'
   },
   output: {
     path: config.build.assetsRoot,
@@ -88,7 +97,9 @@ module.exports = {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('examples'),
       '@utils': resolve('examples/utils'),
-      'utils': resolve('src/utils')
+      'utils': resolve('src/utils'),
+      'assets': resolve('src/assets'),
+      'recharger':resolve('')
     }
   },
   module: {
@@ -137,6 +148,20 @@ module.exports = {
       }
     ]
   },
+  plugins:[
+    new HtmlWebpackPlugin({
+      chunks: ['vendor', 'docs'],
+      template: 'index.html',
+      filename: 'index.html',
+      inject: true
+    }),
+    new HtmlWebpackPlugin({
+      chunks: ['vendor', 'mobile'],
+      template: 'examples.html',
+      filename: 'examples.html',
+      inject: true
+    }),
+  ],
   node: {
     // prevent webpack from injecting useless setImmediate polyfill because Vue
     // source contains it (although only uses it if it's native).

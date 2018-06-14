@@ -2,6 +2,7 @@
 @import "base/base.scss";
 @import "components/button/button.scss";
 @import "components/lead/lead.scss";
+@import "components/tabs/tabs.scss";
 @import "components/cash-bulk/cash-bulk.scss";
 @import "components/cash-bulk/cash-bulk-group.scss";
 @import "components/table/table.scss";
@@ -12,5 +13,9 @@
 @import "components/transition/transition.scss";
 @import "components/button-group/button-group.scss";
 @import "components/tag/tag.scss";
-@import "components/dialog/dialog.scss"
+@import "components/radio/radio.scss";
+@import "components/checkbox/checkbox.scss";
+@import "components/dialog/dialog.scss";
+@import "components/auto-complete/auto-complete.scss";
+@import "components/auto-complete/auto-suggestion.scss"
 

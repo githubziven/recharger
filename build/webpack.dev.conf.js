@@ -1,19 +1,28 @@
+/* 整个组件库文档运行
+ * @Author: zhongw@corp.21cn.com 
+ * @Date: 2018-06-14 09:59:06 
+ * @Last Modified by: zhongw@corp.21cn.com
+ * @Last Modified time: 2018-06-14 12:05:32
+ */
 'use strict'
 const utils = require('./utils')
 const webpack = require('webpack')
 const config = require('../config')
 const merge = require('webpack-merge')
 const path = require('path')
+const { VueLoaderPlugin } = require('vue-loader');
 const baseWebpackConfig = require('./webpack.base.conf')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
+const vueLoaderConfig = require('./vue-loader.conf')
 const portfinder = require('portfinder')
 
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
 
 const devWebpackConfig = merge(baseWebpackConfig, {
+  mode: 'development',
   module: {
     rules: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap, usePostCSS: true })
   },
@@ -45,39 +54,28 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       poll: config.dev.poll,
     }
   },
-  plugins: [
-    new webpack.DefinePlugin({
-      'process.env': require('../config/dev.env')
-    }),
+  plugins: [ 
+    new VueLoaderPlugin(),
+    // new webpack.DefinePlugin({
+    //   'process.env': require('../config/dev.env')
+    // }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
-    new webpack.NoEmitOnErrorsPlugin(),
+    new webpack.NoEmitOnErrorsPlugin()
     // https://github.com/ampedandwired/html-webpack-plugin
     // new HtmlWebpackPlugin({
     //   filename: 'index.html',
     //   template: 'index.html',
     //   inject: true
     // }),
-    new HtmlWebpackPlugin({
-      chunks: ['vendor', 'docs'],
-      template: 'index.html',
-      filename: 'index.html',
-      inject: true
-    }),
-    new HtmlWebpackPlugin({
-      chunks: ['vendor', 'mobile'],
-      template: 'examples.html',
-      filename: 'examples.html',
-      inject: true
-    }),
     // copy custom static assets
-    new CopyWebpackPlugin([
-      {
-        from: path.resolve(__dirname, '../static'),
-        to: config.dev.assetsSubDirectory,
-        ignore: ['.*']
-      }
-    ])
+    // new CopyWebpackPlugin([
+    //   {
+    //     from: path.resolve(__dirname, '../static'),
+    //     to: config.dev.assetsSubDirectory,
+    //     ignore: ['.*']
+    //   }
+    // ])
   ]
 })
 
