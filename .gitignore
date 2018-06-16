@@ -1,11 +1,5 @@
 .idea
 .vscode
-static
-lib/
-packages
-src
-node_modules/
 .gitignore
-examples
 dist/
 package-lock.json
