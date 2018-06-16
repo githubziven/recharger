@@ -1,6 +1,9 @@
 .idea
 .vscode
-dist/
+static
+lib/
+packages
+src
 node_modules/
 .gitignore
 examples
