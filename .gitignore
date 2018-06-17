@@ -5,5 +5,4 @@
 !dist/*
 .npmignore
 /node_modules
-.npmignore
 package-lock.json
