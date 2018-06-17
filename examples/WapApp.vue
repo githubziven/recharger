@@ -1,12 +1,5 @@
 <template>
   <div style="width: 100%;height: 100%">
-    <!--<van-nav-bar-->
-    <!--v-show="title"-->
-    <!--class="van-doc-nav-bar"-->
-    <!--:title="title"-->
-    <!--left-arrow-->
-    <!--@click-left="onBack"-->
-    <!--/>-->
     <keep-alive>
       <router-view />
     </keep-alive>

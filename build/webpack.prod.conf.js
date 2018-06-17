@@ -1,8 +1,8 @@
 /*整个组件库文档打包
  * @Author: zhongw@corp.21cn.com 
  * @Date: 2018-06-14 10:00:11 
- * @Last Modified by:   zhongw@corp.21cn.com 
- * @Last Modified time: 2018-06-14 10:00:11 
+ * @Last Modified by: zhongw@corp.21cn.com
+ * @Last Modified time: 2018-06-18 00:35:49
  */
 'use strict'
 const path = require('path')
