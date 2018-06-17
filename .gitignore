@@ -1,9 +1,7 @@
 .idea
 .vscode
 .gitignore
-dist/
-!dist/*
-index.html
+dist
 .npmignore
 node_modules/
 .npmignore
