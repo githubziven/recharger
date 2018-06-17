@@ -2,6 +2,7 @@ function iframeReady (iframe, callback) {
   const doc = iframe.contentDocument || iframe.contentWindow.document
   
   const interval = () => {
+    console.log('3333',iframe,iframe.contentWindow)
     if (iframe.contentWindow.changePath) {
       callback()
     } else {
