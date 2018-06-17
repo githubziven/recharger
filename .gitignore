@@ -5,6 +5,6 @@ dist/
 !dist/*
 index.html
 .npmignore
-node_modules
+node_modules/
 .npmignore
 package-lock.json
