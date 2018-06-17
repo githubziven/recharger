@@ -2,7 +2,6 @@ function iframeReady (iframe, callback) {
   const doc = iframe.contentDocument || iframe.contentWindow.document
   
   const interval = () => {
-    console.log('iframe.contentWindow.changePath',iframe.contentWindow.changePath)
     if (iframe.contentWindow.changePath) {
       callback()
     } else {
