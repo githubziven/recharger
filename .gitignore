@@ -2,7 +2,6 @@
 .vscode
 .gitignore
 /dist
-!/dist/
 .npmignore
 /node_modules
 package-lock.json
