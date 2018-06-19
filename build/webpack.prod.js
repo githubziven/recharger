@@ -2,6 +2,9 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
+function resolve (dir) {
+  return path.join(__dirname, '..', dir)
+}
 
 module.exports = {
   mode: 'production',
@@ -11,7 +14,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, '../examples/dist'),
-    publicPath: 'https://zivenday.me/recharger/',
+    publicPath: 'https://zivenday.me/recharger/dist/',
     filename: '[name].[hash:8].js',
     chunkFilename: 'async_[name].[chunkhash:8].js'
   },
@@ -30,9 +33,14 @@ module.exports = {
     }
   },
   resolve: {
-    extensions: ['.js', '.vue', '.css'],
+    extensions: ['.js', '.vue', '.json'],
     alias: {
-      packages: path.join(__dirname, '../packages')
+      'vue$': 'vue/dist/vue.esm.js',
+      '@': resolve('examples'),
+      '@utils': resolve('examples/utils'),
+      'utils': resolve('src/utils'),
+      'assets': resolve('src/assets'),
+      'recharger':resolve('')
     }
   },
   module: {

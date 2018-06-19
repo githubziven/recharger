@@ -2,7 +2,7 @@
  * @Author: zhongw@corp.21cn.com 
  * @Date: 2018-06-14 10:00:11 
  * @Last Modified by: zhongw@corp.21cn.com
- * @Last Modified time: 2018-06-18 11:21:18
+ * @Last Modified time: 2018-06-19 20:43:45
  */
 'use strict'
 const path = require('path')
@@ -94,30 +94,38 @@ const webpackConfig = merge(baseWebpackConfig, {
     // generate dist index.html with correct asset hash for caching.
     // you can customize output by editing /index.html
     // see https://github.com/ampedandwired/html-webpack-plugin
-    // new HtmlWebpackPlugin({
-    //   filename: process.env.NODE_ENV === 'testing'
-    //     ? 'index.html'
-    //     : config.build.index,
-    //   template: 'index.html',
-    //   // favicon: resolveApp('favicon.ico'),
-    //   inject: true,
-    //   minify: {
-    //     removeComments: true,
-    //     collapseWhitespace: true,
-    //     removeRedundantAttributes: true,
-    //     useShortDoctype: true,
-    //     removeEmptyAttributes: true,
-    //     removeStyleLinkTypeAttributes: true,
-    //     keepClosingSlash: true,
-    //     minifyJS: true,
-    //     minifyCSS: true,
-    //     minifyURLs: true
-    //     // more options:
-    //     // https://github.com/kangax/html-minifier#options-quick-reference
-    //   },
-    //   // necessary to consistently work with multiple chunks via CommonsChunkPlugin
-    //   chunksSortMode: 'dependency'
-    // }),
+    ,
+    new HtmlWebpackPlugin({
+      chunks: ['vendor', 'mobile'],
+      template: 'examples.html',
+      filename: 'examples.html',
+      inject: true
+    }),
+    new HtmlWebpackPlugin({
+      chunks: ['vendor', 'docs'],
+      filename: process.env.NODE_ENV === 'testing'
+        ? 'index.html'
+        : config.build.index,
+      template: 'index.html',
+      // favicon: resolveApp('favicon.ico'),
+      inject: true,
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeRedundantAttributes: true,
+        useShortDoctype: true,
+        removeEmptyAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        keepClosingSlash: true,
+        minifyJS: true,
+        minifyCSS: true,
+        minifyURLs: true
+        // more options:
+        // https://github.com/kangax/html-minifier#options-quick-reference
+      },
+      // necessary to consistently work with multiple chunks via CommonsChunkPlugin
+      chunksSortMode: 'dependency'
+    }),
     // keep module.id stable when vendor modules does not change
     new webpack.HashedModuleIdsPlugin(),
     // enable scope hoisting
