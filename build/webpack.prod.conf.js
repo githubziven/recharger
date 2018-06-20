@@ -2,7 +2,7 @@
  * @Author: zhongw@corp.21cn.com 
  * @Date: 2018-06-14 10:00:11 
  * @Last Modified by: zhongw@corp.21cn.com
- * @Last Modified time: 2018-06-19 21:21:00
+ * @Last Modified time: 2018-06-20 15:12:18
  */
 'use strict'
 const path = require('path')
@@ -34,7 +34,7 @@ const webpackConfig = merge(baseWebpackConfig, {
         vendors: {
           test: /[\\/]node_modules[\\/]/,
           chunks: 'initial',
-          name: 'vendors.[chunkhash:16]',
+          name: 'vendors',
         },
         'async-vendors': {
           test: /[\\/]node_modules[\\/]/,
@@ -95,13 +95,13 @@ const webpackConfig = merge(baseWebpackConfig, {
     // you can customize output by editing /index.html
     // see https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
-      chunks: ['vendor', 'mobile'],
+      chunks: ['vendors', 'runtime','mobile'],
       template: 'examples.html',
       filename: 'examples.html',
       inject: true
     }),
     new HtmlWebpackPlugin({
-      chunks: ['vendor', 'docs'],
+       chunks: ['vendors', 'runtime','docs'],
       filename: process.env.NODE_ENV === 'testing'
         ? 'index.html'
         : config.build.index,

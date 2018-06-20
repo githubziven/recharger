@@ -2,7 +2,7 @@
  * @Author: zhongw@corp.21cn.com 
  * @Date: 2018-06-05 10:31:01 
  * @Last Modified by: zhongw@corp.21cn.com
- * @Last Modified time: 2018-06-18 00:37:28
+ * @Last Modified time: 2018-06-20 07:18:08
  */
 
 /* eslint-disable padded-blocks */
@@ -16,7 +16,6 @@ import { iframeReady, isMobile } from './index'
 window.syncPath = function (dir) {
   const router = window.vueRouter
   const isInIframe = window !== window.top
-  console.log('isInIframe',isInIframe,'isMobile',isMobile)
   const currentDir = router.history.current.path
   const pathParts = currentDir.split('/')
   let lang = pathParts[0]

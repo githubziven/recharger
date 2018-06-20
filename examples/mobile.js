@@ -12,7 +12,7 @@ import '../lib/theme/index.css'
 Vue.use(RLEM)
 const router = new VueRouter({
   mode: 'hash',
-  base: '/examples',
+  base: '/examples.html',
   routes: routers(true)
 })
 router.beforeEach((to, from, next) => {

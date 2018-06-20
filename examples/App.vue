@@ -13,7 +13,7 @@ export default {
   name: 'App',
   data () {
     return {
-      simulators: [`/examples/#/zh-CN/test`],
+      simulators: [`/examples.html#/zh-CN/index`],
       config: config['zh-CN']
     }
   },
